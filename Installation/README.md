@@ -16,8 +16,7 @@ sg   ----->  ubuntu-SG ( alltraffic = ANYWHERE )
 ### 2. Connect k8s-master instance & install docker - minikube
 
 
-cd downloads
-ssh -i "k8s.pem" ubuntu@ec2-13-201-15-57.ap-south-1.compute.amazonaws.com
+Coonect your instance and run below commands
 
 ```
 sudo apt update -y
