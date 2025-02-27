@@ -4,12 +4,13 @@ Using Minikube
 ### 1. Create 1 EC2 instance
 
 
-ami -> ubuntu-22
-instance types -> t2.medium
-key pair -> k8s.pem
-vpc -> default vpc
-az -> 1a
-sg -> ubuntu-SG (ssh,http,https = ANYWHERE)
+ami  ----->  ubuntu-22
+
+instance types  ---->  t2.medium
+
+key pair  ---->  k8s.pem
+
+sg   ----->  ubuntu-SG ( alltraffic = ANYWHERE )
 
 
 ### 2. Connect k8s-master instance & install docker - minikube
