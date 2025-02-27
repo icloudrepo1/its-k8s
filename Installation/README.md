@@ -53,8 +53,18 @@ sudo snap install kubectl --classic
 
 ### 5. Now check cluster info
 
+```
 kubectl get nodes
+```
+
+```
 kubectl cluster-info
+```
+
+```
 kubectl get po -A
+```
+
+
 
 ====================END=================================================================
