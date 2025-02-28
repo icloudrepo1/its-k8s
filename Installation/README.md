@@ -46,13 +46,19 @@ sudo usermod -aG docker $USER && newgrp docker
 minikube start --driver=docker
 ```
 
-### 4. Install k8s cli tool
+### 4. Start minikube service
+
+```
+minikube start --driver=docker
+```
+
+### 5. Install k8s cli tool
 
 ```
 sudo snap install kubectl --classic
 ```
 
-### 5. Now check cluster info
+### 6. Now check cluster info
 
 ```
 kubectl get nodes
