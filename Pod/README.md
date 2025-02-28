@@ -1,7 +1,7 @@
 ## How to create pod
 ============================
 
-create a file : `mypod.yml`
+### 1. create a file : `vi mypod.yml`
 
 ```
 apiVersion: v1
@@ -18,3 +18,36 @@ spec:
         - containerPort: 80
 ```
 
+### 2. Apply yml file
+
+
+```
+kubectl apply -f mypod.yml
+```
+
+### 3. Verify pod status
+
+
+```
+kubectl get pods
+```
+
+### 4. Describe pod
+
+
+```
+kubectl describe pod mypod1
+```
+
+### 5. Access running container
+
+
+```
+kubectl exec -it mypod1 -- /bin/sh
+```
+
+### 5. To delete pod
+
+```
+kubectl delete pod mypod1
+```
