@@ -38,18 +38,18 @@ kubectl get pods
 
 
 ```
-kubectl describe pod mypod1
+kubectl describe pod my-pod1
 ```
 
 ### 5. Access running container
 
 
 ```
-kubectl exec -it mypod1 -- /bin/sh
+kubectl exec -it my-pod1 -- /bin/sh
 ```
 
 ### 5. To delete pod
 
 ```
-kubectl delete pod mypod1
+kubectl delete pod my-pod1
 ```
