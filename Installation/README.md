@@ -43,7 +43,6 @@ minikube version
 
 ```
 sudo usermod -aG docker $USER && newgrp docker
-minikube start --driver=docker
 ```
 
 ### 4. Start minikube service
