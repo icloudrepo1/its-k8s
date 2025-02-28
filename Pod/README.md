@@ -18,6 +18,8 @@ spec:
         - containerPort: 80
 ```
 
+Press-ESC and :wq
+
 ### 2. Apply yml file
 
 
