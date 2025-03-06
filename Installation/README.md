@@ -201,22 +201,94 @@ kubectl get nodes
 
 ---
 
-## Optional: Labeling Nodes
+## Optional: create pod inside worker node-1
 
-If you want to label worker nodes, you can use the following command:
 
-```bash
-kubectl label node <node-name> node-role.kubernetes.io/worker=worker
-```
-
----
-
-## Optional: Test a demo Pod
-
-If you want to test a demo pod, you can use the following command:
+#### 1. Go to your worker node-1 system and change your hostname
 
 ```bash
-kubectl run hello-world-pod --image=busybox --restart=Never --command -- sh -c "echo 'Hello, World' && sleep 3600"
+sudo hostnamectl set-hostname worker-1
 ```
 
-<kbd>![image](https://github.com/paragpallavsingh/kubernetes-kickstarter/assets/40052830/bace1884-bbba-4e2f-8fb2-83bbba819d08)</kbd>
+#### 2. For Apply
+
+```bash
+sudo reboot
+```
+
+#### 3. Go to Master node and delete existing worker_node-1 ( ip add-type )
+
+
+```bash
+sudo kubectl delete node <worker_node-1_ip>
+```
+
+```bash
+sudo kubectl get nodes
+```
+
+
+#### 4. Go to Worker node rejoin again
+
+
+```bash
+sudo kubeadm reset
+```
+
+```bash
+sudo your-token --v=5
+```
+
+#### 5. Go to Master node and check node joined or not
+
+
+```bash
+sudo kubectl get nodes
+```
+
+#### 6. Go to Master node and create pod
+
+
+```bash
+vi mypodcrt.yml
+```
+
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: worker-1
+  containers:
+    - name: container1
+      image: nginx
+      ports:
+        - containerPort: 80
+
+```
+
+
+#### A. Create the pod
+
+
+```
+kubectl apply -f mypodcrt.yml
+```
+
+
+#### B. Verify the pod's status
+
+
+```
+kubectl get pods
+```
+
+```
+kubectl get pod pod1 -o wide
+
+```
+
+===========================END==========================================================================
